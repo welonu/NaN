@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			console.log(isNaN('abc')); //==> true
+			
+			console.log(isNaN(undefined)); //==> true
+			
+			console.log(isNaN({})); //==> true
+			
+			console.log(isNaN({name:'foo'})); // ==> true
+			
+			//isNaN检测NaN并不可靠,字符串，undefined，甚至对象，结果都返回真
+			
+			//准确的判断，NaN不等于自己
+			var a = NaN;
+			a !== a; // true
+
+			var b = 'foo';
+			b !== b; //false;
+	
+			var c = undefined;
+			c !== c; //false
+
+			var d = {};
+			d !== d; // false
+		
+			var e = {name:'foo'};
+			e !== e; //false
+	
+			
+			//console.log(typeof('foo'));
+		</script>
+	</body>
+</html>
